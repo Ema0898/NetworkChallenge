@@ -1,0 +1,11 @@
+[Unit]
+Description=Startup Script for Network Challenge program
+Wants=network-online.target
+After=network.target network-online.target syslog.target
+
+[Service]
+ExecStart=camera_mqtt.py
+StandardOutput=journal
+
+[Install]
+WantedBy=multi-user.target
